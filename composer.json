@@ -1,6 +1,7 @@
 {
 	"name": "leoruhland/cakephp-fieldtypes",
 	"description": "FieldTypes plugin for CakePHP. CakeAdmin compatible.",
+	"license": "MIT",
 	"type": "cakephp-plugin",
 	"require": {
 		"php": ">=5.4.16",

@@ -46,7 +46,7 @@ public function postType() {
 
 ## Types
 
-## [Select2](https://select2.github.io/) - [GitHub](https://github.com/select2/select2)
+### [Select2](https://select2.github.io/) - [GitHub](https://github.com/select2/select2)
 ```php
 'type' => 'select2'
 ```
@@ -57,35 +57,35 @@ public function postType() {
 ```
 ![select2](http://leoruhland.github.io/cakephp-fieldtypes/images/ex-select2-multiple.png)
 
-## [Summernote](http://summernote.org/) - [GitHub](https://github.com/summernote/summernote)
+### [Summernote](http://summernote.org/) - [GitHub](https://github.com/summernote/summernote)
 
 ```php
 'type' => 'summernote'
 ```
 ![summernote](http://leoruhland.github.io/cakephp-fieldtypes/images/ex-summernote.png)
 
-## [Bootstrap Datepicker](http://eternicode.github.io/bootstrap-datepicker/) - [GitHub](https://github.com/eternicode/bootstrap-datepicker)
+### [Bootstrap Datepicker](http://eternicode.github.io/bootstrap-datepicker/) - [GitHub](https://github.com/eternicode/bootstrap-datepicker)
 
 ```php
 'type' => 'datepicker'
 ```
 ![datepicker](http://leoruhland.github.io/cakephp-fieldtypes/images/ex-datepicker.png)
 
-## [Bootstrap Colorpicker](http://mjolnic.com/bootstrap-colorpicker/) - [GitHub](https://github.com/mjolnic/bootstrap-colorpicker/)
+### [Bootstrap Colorpicker](http://mjolnic.com/bootstrap-colorpicker/) - [GitHub](https://github.com/mjolnic/bootstrap-colorpicker/)
 
 ```php
 'type' => 'colorpicker'
 ```
 ![colorpicker](http://leoruhland.github.io/cakephp-fieldtypes/images/ex-colorpicker.png)
 
-## [Bootstrap TouchSpin](http://www.virtuosoft.eu/code/bootstrap-touchspin/) - [GitHub](https://github.com/istvan-ujjmeszaros/bootstrap-touchspin)
+### [Bootstrap TouchSpin](http://www.virtuosoft.eu/code/bootstrap-touchspin/) - [GitHub](https://github.com/istvan-ujjmeszaros/bootstrap-touchspin)
 
 ```php
 'type' => 'touchspin'
 ```
 ![touchspin](http://leoruhland.github.io/cakephp-fieldtypes/images/ex-touchspin.png)
 
-## [Bootstrap Toggle](http://www.bootstraptoggle.com/) - [GitHub](https://github.com/minhur/bootstrap-toggle/)
+### [Bootstrap Toggle](http://www.bootstraptoggle.com/) - [GitHub](https://github.com/minhur/bootstrap-toggle/)
 
 ```php
 'type' => 'toggle'

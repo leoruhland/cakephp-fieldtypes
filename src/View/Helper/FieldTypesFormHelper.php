@@ -20,15 +20,6 @@ use Bootstrap3\View\Helper\BootstrapFormHelper;
 
 class FieldTypesFormHelper extends BootstrapFormHelper {
 
-	protected $_defaultConfig = [];
-
-	public $helpers = [
-		'Html', 
-		'Url',
-		'bHtml' => [
-			'className' => 'Bootstrap3.BootstrapHtml'
-		]
-	];
 
 	protected function _generateFieldClass($prefix, $fieldName){
 		return $prefix . '-' . str_replace(['.'], '', $fieldName);
@@ -46,7 +37,7 @@ class FieldTypesFormHelper extends BootstrapFormHelper {
 		}
 
 		switch($options['type']) {
-
+			
 			case 'select2':
 			$options['type'] = 'select';
 			$options['class'] = $this->_generateFieldClass('ft-select2', $fieldName);
@@ -112,10 +103,10 @@ class FieldTypesFormHelper extends BootstrapFormHelper {
 			$options['type'] = 'text';
 			$options['class'] = $this->_generateFieldClass('ft-locationpicker', $fieldName);
 			$options['append'] = '<div class="div'.$options['class'].'" style="width: 500px; height: 400px;"></div>';
-			echo $this->Html->script('http://maps.google.com/maps/api/js?sensor=fafte&libraries=places');
+			echo $this->Html->script('http://maps.google.com/maps/api/js?sensor=false&libraries=places');
 			echo $this->Html->script('FieldTypes.locationpicker');
 			$this->Html->scriptStart(['block' => true]);
-			echo '$(document).ready(function() { $(".div'.$options['class'].'").locationpicker('.($lsOptions).'); });';
+			echo '$(document).ready(function() { $(".div'.$options['class'].'").locationpicker('.($ftOptions).'); });';
 			$this->Html->scriptEnd();
 			break;
 

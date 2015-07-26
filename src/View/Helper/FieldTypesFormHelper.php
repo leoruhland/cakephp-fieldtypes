@@ -28,33 +28,36 @@ class FieldTypesFormHelper extends BootstrapFormHelper {
 	public function input($fieldName, array $options = array()) {
 
 		$options = $this->_parseOptions($fieldName, $options);
+		$_ftOptions = [];
 
 		if(!isset($options['ft-options'])){
-			$ftOptions = '{}';
+			$ftOptions = [];
 		} else {
-			$ftOptions = json_encode($options['ft-options'], true);
+			$ftOptions = $options['ft-options'];
 			unset($options['ft-options']);
 		}
 
 		switch($options['type']) {
-			
+
 			case 'select2':
 			$options['type'] = 'select';
 			$options['class'] = $this->_generateFieldClass('ft-select2', $fieldName);
 			echo $this->Html->script('FieldTypes.select2');
 			echo $this->Html->css('FieldTypes.select2');
 			$this->Html->scriptStart(['block' => true]);
-			echo '$(document).ready(function() { $(".'.$options['class'].'").select2('.($ftOptions).'); });';
+			echo '$(document).ready(function() { $(".'.$options['class'].'").select2('.(json_encode($ftOptions, true)).'); });';
 			$this->Html->scriptEnd();
 			break;
 
 			case 'summernote':
+			$_ftOptions = ['height' => '300'];
+			$ftOptions = array_merge($_ftOptions, $ftOptions);
 			$options['type'] = 'textarea';
 			$options['class'] = $this->_generateFieldClass('ft-summernote', $fieldName);
 			echo $this->Html->script('FieldTypes.summernote');
 			echo $this->Html->css('FieldTypes.summernote');
 			$this->Html->scriptStart(['block' => true]);
-			echo '$(document).ready(function() { $(".'.$options['class'].'").summernote('.($ftOptions).'); });';
+			echo '$(document).ready(function() { $(".'.$options['class'].'").summernote('.(json_encode($ftOptions, true)).'); });';
 			$this->Html->scriptEnd();
 			break;
 
@@ -64,7 +67,7 @@ class FieldTypesFormHelper extends BootstrapFormHelper {
 			echo $this->Html->script('FieldTypes.datepicker');
 			echo $this->Html->css('FieldTypes.datepicker');
 			$this->Html->scriptStart(['block' => true]);
-			echo '$(document).ready(function() { $(".'.$options['class'].'").datepicker('.($ftOptions).'); });';
+			echo '$(document).ready(function() { $(".'.$options['class'].'").datepicker('.(json_encode($ftOptions, true)).'); });';
 			$this->Html->scriptEnd();
 			break;
 
@@ -74,7 +77,7 @@ class FieldTypesFormHelper extends BootstrapFormHelper {
 			echo $this->Html->script('FieldTypes.colorpicker');
 			echo $this->Html->css('FieldTypes.colorpicker');
 			$this->Html->scriptStart(['block' => true]);
-			echo '$(document).ready(function() { $(".'.$options['class'].'").colorpicker('.($ftOptions).'); });';
+			echo '$(document).ready(function() { $(".'.$options['class'].'").colorpicker('.(json_encode($ftOptions, true)).'); });';
 			$this->Html->scriptEnd();
 			break;
 
@@ -85,7 +88,7 @@ class FieldTypesFormHelper extends BootstrapFormHelper {
 			echo $this->Html->script('FieldTypes.toggle');
 			echo $this->Html->css('FieldTypes.toggle');
 			$this->Html->scriptStart(['block' => true]);
-			echo '$(document).ready(function() { $(".'.$options['class'].'").bootstrapToggle('.($ftOptions).'); });';
+			echo '$(document).ready(function() { $(".'.$options['class'].'").bootstrapToggle('.(json_encode($ftOptions, true)).'); });';
 			$this->Html->scriptEnd();
 			break;
 
@@ -95,7 +98,7 @@ class FieldTypesFormHelper extends BootstrapFormHelper {
 			echo $this->Html->script('FieldTypes.touchspin');
 			echo $this->Html->css('FieldTypes.touchspin');
 			$this->Html->scriptStart(['block' => true]);
-			echo '$(document).ready(function() { $(".'.$options['class'].'").TouchSpin('.($ftOptions).'); });';
+			echo '$(document).ready(function() { $(".'.$options['class'].'").TouchSpin('.(json_encode($ftOptions, true)).'); });';
 			$this->Html->scriptEnd();
 			break;
 
@@ -106,7 +109,7 @@ class FieldTypesFormHelper extends BootstrapFormHelper {
 			echo $this->Html->script('http://maps.google.com/maps/api/js?sensor=false&libraries=places');
 			echo $this->Html->script('FieldTypes.locationpicker');
 			$this->Html->scriptStart(['block' => true]);
-			echo '$(document).ready(function() { $(".div'.$options['class'].'").locationpicker('.($ftOptions).'); });';
+			echo '$(document).ready(function() { $(".div'.$options['class'].'").locationpicker('.(json_encode($ftOptions, true)).'); });';
 			$this->Html->scriptEnd();
 			break;
 

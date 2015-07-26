@@ -26,7 +26,7 @@ You can use the FieldTypes extending core FormHelper:
 ```php
 $this->loadHelper('Form', ['className' => 'FieldTypes.FieldTypesForm']);
 ```
-You can use FieldTypes extending FormHelper.
+And then, using it:
 ```php
 $this->Form->input('some_field', ['type' => 'summernote']);
 ```

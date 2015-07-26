@@ -9,3 +9,7 @@ The recommended way to install composer packages is:
 ```
 composer require leoruhland/cakephp-fieldtypes
 ```
+
+## CakeAdmin
+
+The plugin is [CakeAdmin](https://github.com/cakemanager/cakephp-cakeadmin) compatible!

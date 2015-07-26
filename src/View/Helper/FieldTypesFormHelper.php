@@ -18,14 +18,16 @@ namespace FieldTypes\View\Helper;
 use Cake\View\Helper;
 use Bootstrap3\View\Helper\BootstrapFormHelper;
 
-
-class FieldTypesFormHelper extends Helper {
+class FieldTypesFormHelper extends BootstrapFormHelper {
 
 	protected $_defaultConfig = [];
 
 	public $helpers = [
 		'Html', 
-		'Url'
+		'Url',
+		'bHtml' => [
+			'className' => 'Bootstrap3.BootstrapHtml'
+		]
 	];
 
 	protected function _generateFieldClass($prefix, $fieldName){
@@ -38,7 +40,7 @@ class FieldTypesFormHelper extends Helper {
 
 		if(!isset($options['ft-options'])){
 			$ftOptions = '{}';
-		} efte {
+		} else {
 			$ftOptions = json_encode($options['ft-options'], true);
 			unset($options['ft-options']);
 		}

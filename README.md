@@ -47,9 +47,18 @@ public function postType() {
 ## Types
 
 ```php
+'type' => 'select2'
+```
+![select2](http://leoruhland.github.io/cakephp-fieldtypes/images/ex-select2.png)
+```php
+'type' => 'select2', 'multiple' => true
+```
+![select2](http://leoruhland.github.io/cakephp-fieldtypes/images/ex-select2-multiple.png)
+
+```php
 'type' => 'summernote'
 ```
-![Touchspin](http://leoruhland.github.io/cakephp-fieldtypes/images/ex-summernote.png)
+![summernote](http://leoruhland.github.io/cakephp-fieldtypes/images/ex-summernote.png)
 
 ```php
 'type' => 'datepicker'
@@ -59,17 +68,17 @@ public function postType() {
 ```php
 'type' => 'colorpicker'
 ```
-![Touchspin](http://leoruhland.github.io/cakephp-fieldtypes/images/ex-colorpicker.png)
+![colorpicker](http://leoruhland.github.io/cakephp-fieldtypes/images/ex-colorpicker.png)
 
 ```php
 'type' => 'touchspin'
 ```
-![Touchspin](http://leoruhland.github.io/cakephp-fieldtypes/images/ex-touchspin.png)
+![touchspin](http://leoruhland.github.io/cakephp-fieldtypes/images/ex-touchspin.png)
 
 ```php
 'type' => 'toggle'
 ```
-![Touchspin](http://leoruhland.github.io/cakephp-fieldtypes/images/ex-toggle.png)
+![toggle](http://leoruhland.github.io/cakephp-fieldtypes/images/ex-toggle.png)
 
 ## CakeAdmin
 

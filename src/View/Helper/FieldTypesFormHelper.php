@@ -16,7 +16,7 @@
 namespace FieldTypes\View\Helper;
 
 use Cake\View\Helper;
-use Bootstrap3\View\Helper\BootstrapFormHelper;
+use Bootstrap\View\Helper\BootstrapFormHelper;
 
 class FieldTypesFormHelper extends BootstrapFormHelper {
 
@@ -120,4 +120,3 @@ class FieldTypesFormHelper extends BootstrapFormHelper {
 
 
 }
-

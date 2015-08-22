@@ -71,6 +71,16 @@ class FieldTypesFormHelper extends BootstrapFormHelper {
 			$this->Html->scriptEnd();
 			break;
 
+			case 'datetimepicker':
+			$options['type'] = 'text';
+			$options['class'] = $this->_generateFieldClass('ft-datetimepicker', $fieldName);
+			echo $this->Html->script('FieldTypes.datetimepicker');
+			echo $this->Html->css('FieldTypes.datetimepicker');
+			$this->Html->scriptStart(['block' => true]);
+			echo '$(document).ready(function() { $(".'.$options['class'].'").datetimepicker('.(json_encode($ftOptions, true)).'); });';
+			$this->Html->scriptEnd();
+			break;
+
 			case 'colorpicker':
 			$options['type'] = 'text';
 			$options['class'] = $this->_generateFieldClass('ft-colorpicker', $fieldName);

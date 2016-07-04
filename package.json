@@ -1,0 +1,17 @@
+{
+  "name": "cakephp-fieldtypes",
+  "version": "1.0.0",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp-clean": "^0.3.2",
+    "main-bower-files": "^2.13.1"
+  },
+  "author": "Leonardo Ruhland",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leoruhland/cakephp-fieldtypes/issues"
+  },
+  "homepage": "https://github.com/leoruhland/cakephp-fieldtypes#readme"
+}

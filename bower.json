@@ -85,7 +85,7 @@
         "bootstrap-switch": {
             "main": [
               "./dist/js/bootstrap-switch.min.js",
-              "./dist/css/bootstrap3/bootstrap-switch.min.css"
+              "./dist/css/bootstrap3/bootstrap-switch.css"
             ]
         }
     }

@@ -4,6 +4,10 @@ namespace FieldTypes\View\Widget;
 
 use Cake\View\Form\ContextInterface;
 
+if(!class_exists('\BootstrapUI\View\Widget\SelectBoxWidget')){
+    class_alias('\Cake\View\Widget\SelectBoxWidget', '\BootstrapUI\View\Widget\SelectBoxWidget');
+}
+
 class BootstrapSelectWidget extends \BootstrapUI\View\Widget\SelectBoxWidget
 {
     protected $_templates;

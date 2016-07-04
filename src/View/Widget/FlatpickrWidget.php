@@ -4,6 +4,10 @@ namespace FieldTypes\View\Widget;
 
 use Cake\View\Form\ContextInterface;
 
+if(!class_exists('\BootstrapUI\View\Widget\BasicWidget')){
+    class_alias('\Cake\View\Widget\BasicWidget', '\BootstrapUI\View\Widget\BasicWidget');
+}
+
 class FlatpickrWidget extends \BootstrapUI\View\Widget\BasicWidget
 {
     protected $_templates;

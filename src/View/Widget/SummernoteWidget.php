@@ -4,6 +4,10 @@ namespace FieldTypes\View\Widget;
 
 use Cake\View\Form\ContextInterface;
 
+if(!class_exists('\BootstrapUI\View\Widget\TextareaWidget')){
+    class_alias('\Cake\View\Widget\TextareaWidget', '\BootstrapUI\View\Widget\TextareaWidget');
+}
+
 class SummernoteWidget extends \BootstrapUI\View\Widget\TextareaWidget
 {
     protected $_templates;

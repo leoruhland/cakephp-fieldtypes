@@ -54,7 +54,7 @@ class Select2Widget extends \BootstrapUI\View\Widget\SelectBoxWidget
         // Script/styles include
         echo $this->_View->Html->css('FieldTypes.../vendor/select2/dist/css/select2.min.css', ['block' => 'css']);
         echo $this->_View->Html->css('FieldTypes.../vendor/select2-bootstrap-theme/dist/select2-bootstrap.min.css', ['block' => 'css']);
-        echo $this->_View->Html->script('FieldTypes.../vendor/select2/dist/js/select2.min.js', ['block' => 'headjs']);
+        echo $this->_View->Html->script('FieldTypes.../vendor/select2/dist/js/select2.full.min.js', ['block' => 'headjs']);
 
         // Script call
         $this->_View->Html->scriptStart(['block' => true]);

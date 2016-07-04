@@ -3,6 +3,7 @@
 namespace FieldTypes\View\Widget;
 
 use Cake\View\Form\ContextInterface;
+use Cake\Utility\Inflector;
 
 if(!class_exists('\BootstrapUI\View\Widget\SelectBoxWidget')){
     class_alias('\Cake\View\Widget\SelectBoxWidget', '\BootstrapUI\View\Widget\SelectBoxWidget');
@@ -34,8 +35,11 @@ class BootstrapSelectWidget extends \BootstrapUI\View\Widget\SelectBoxWidget
             'templateVars' => []
         ];
 
+        $data['type'] = 'select';
         $data['value'] = $data['val'];
         $data['class'] = $this->_generateFieldClass('ft-bootstrap-select', $data['name']);
+
+        $data['options'] = $this->_optionsOptions($data['name'], $data);
 
         $ftOptions = isset($data['ftOptions']) ? $data['ftOptions'] : [];
 
@@ -63,5 +67,22 @@ class BootstrapSelectWidget extends \BootstrapUI\View\Widget\SelectBoxWidget
     public function secureFields(array $data)
     {
         return [$data['name']];
+    }
+
+    protected function _optionsOptions($fieldName, $options)
+    {
+        $pluralize = true;
+        if (substr($fieldName, -5) === '._ids') {
+            $fieldName = substr($fieldName, 0, -5);
+            $pluralize = false;
+        } elseif (substr($fieldName, -3) === '_id') {
+            $fieldName = substr($fieldName, 0, -3);
+        }
+        $fieldName = array_slice(explode('.', $fieldName), -1)[0];
+
+        $varName = Inflector::variable(
+            $pluralize ? Inflector::pluralize($fieldName) : $fieldName
+        );
+        return $this->_View->get($varName);
     }
 }

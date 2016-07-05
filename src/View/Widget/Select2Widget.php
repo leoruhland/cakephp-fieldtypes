@@ -37,7 +37,7 @@ class Select2Widget extends \BootstrapUI\View\Widget\SelectBoxWidget
 
         $data['value'] = $data['val'];
         $data['type'] = 'select';
-        $data['class'] = $this->_generateFieldClass('ft-select2', $data['name']);
+        $data['class'] = $this->_generateFieldClass('ft-select2', str_replace(['[',']'], '', $data['name']));
 
         $data['options'] = $this->_optionsOptions($data['name'], $data);
         //debug($data);
@@ -60,7 +60,6 @@ class Select2Widget extends \BootstrapUI\View\Widget\SelectBoxWidget
         $this->_View->Html->scriptStart(['block' => true]);
         echo '$(document).ready(function() { $(".'.$data['class'].'").select2('.(json_encode($ftOptions, true)).') });';
         $this->_View->Html->scriptEnd();
-
         return parent::render($data, $context);
 
     }
@@ -73,14 +72,13 @@ class Select2Widget extends \BootstrapUI\View\Widget\SelectBoxWidget
     protected function _optionsOptions($fieldName, $options)
     {
         $pluralize = true;
-        if (substr($fieldName, -5) === '._ids') {
-            $fieldName = substr($fieldName, 0, -5);
+        if (substr($fieldName, -6) === '[_ids]') {
+            $fieldName = substr($fieldName, 0, -6);
             $pluralize = false;
         } elseif (substr($fieldName, -3) === '_id') {
             $fieldName = substr($fieldName, 0, -3);
         }
         $fieldName = array_slice(explode('.', $fieldName), -1)[0];
-
         $varName = Inflector::variable(
             $pluralize ? Inflector::pluralize($fieldName) : $fieldName
         );
